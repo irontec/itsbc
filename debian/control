@@ -1,0 +1,30 @@
+Source: itsbc
+Section: php
+Priority: optional
+Build-Depends: debhelper, dh-systemd,
+    php7.0, php7.0-mbstring, php7.0-xml, php7.0-zip, php7.0-mysql, 
+    git, curl, python, make, python-sphinx-rtd-theme, gettext
+Standards-Version: 3.9.6
+Maintainer: Irontec IvozProvider Team <ivozprovider@irontec.com>
+
+Package: itsbc
+Architecture: all
+Section: admin
+Priority: optional
+Depends: debconf,
+    po-debconf,
+    acl,
+    php7.0,
+    itsbc-rtpengine,
+    itsbc-opensips,
+    apache2,
+    libapache2-mod-php7.0,
+    ssl-cert,
+    php7.0,
+    php7.0-xml,
+    php7.0-mysql,
+    php7.0-mbstring,
+    php7.0-curl
+Homepage: http://www.irontec.com
+Description: Irontec Tiny SBC - Web Interface
+ .

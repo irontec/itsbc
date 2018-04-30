@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export SYMFONY_ENV=prod
+
+override_dh_auto_build:
+	git config --global http.sslVerify false
+	curl -sS http://getcomposer.org/installer | php -- --install-dir=. --filename=composer
+	./composer --no-interaction --no-dev --prefer-dist  --no-progress install
+
+override_dh_install:
+	dh_install
+	# Remove .git directiories
+	-find debian -type d -name .git -prune -exec rm -fr {} \;
+
+override_dh_systemd_enable:
+	dh_systemd_enable -p itsbc --name=opensips-restarter opensips-restarter.path
+	dh_systemd_enable -p itsbc --name=rtpengine-restarter rtpengine-restarter.path
+
+override_dh_systemd_start:
+	dh_systemd_start  -p itsbc --name=opensips-restarter opensips-restarter.service  --no-restart-on-upgrade --no-start
+	dh_systemd_start  -p itsbc --name=rtpengine-restarter rtpengine-restarter.service  --no-restart-on-upgrade --no-start
+
+%:
+	dh $@ --with systemd

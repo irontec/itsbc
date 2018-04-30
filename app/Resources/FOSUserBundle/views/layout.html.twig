@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>SBC - Login</title>
+
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<style>
+
+
+h1 {
+  text-align: center;
+  margin-left: 30px;
+}
+form {
+    border: 3px solid #f1f1f1;
+    width: 40%;
+    margin-left: 30%;
+    padding: 20px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#_submit {
+    background-color: #B33 ;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#_submit:hover {
+    opacity: 0.8;
+}
+
+#message {
+    background: #e90707;
+    margin: 0 30% 10px 30%;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    font-size: 18px;
+}
+
+</style>
+
+
+<div class="base">
+
+{% block title %}{% endblock %}
+<br>
+{% block content %}
+ 
+   {% block fos_user_content %}
+   {% endblock %}
+
+{% endblock %}
+
+
+</div>
+</body>
+</html>
+

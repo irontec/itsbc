@@ -1,0 +1,2 @@
+/opt/irontec/itsbc/config/opensips/opensips.cfg     /etc/opensips/opensips.cfg
+/opt/irontec/itsbc/vendor/easycorp/easyadmin-bundle/src/Resources/public /opt/irontec/itsbc/web/bundles/easyadmin

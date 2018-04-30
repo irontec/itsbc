@@ -1,0 +1,42 @@
+easy_admin:
+    entities:
+        RoutingRequests:
+            class: AppBundle\Entity\RoutingRequests
+            label: 'Routing Requests'
+            list:
+                title: 'Routing Requests'
+                sort: ['metrica', 'ASC']
+                
+                actions:
+                    - { name: 'edit', icon: 'pencil', label:false }
+                    - { name: 'delete', icon: 'remove', label:false }
+                    - { name: 'new', label: "Add new" }
+                    - { name: '-search' }
+
+                fields:
+                    - { property: 'domain', label: 'Domain' }
+                    - { property: 'ipEntrada', label: 'Incoming IP' }
+                    - { property: 'protocoloEntrada', label: 'Incoming protocol'}
+                    - { property: 'redOrigen', label: 'Origin network' }
+                    - { property: 'nextHop', label: 'Next hop' }
+                    - { property: 'ipSalida', label: 'Outgoing IP' }
+                    - { property: 'metrica', label: 'Penalty' }
+
+            form:
+                fields:
+                    - { property:'domain', label:'Domain' }
+                    - { property:'ipEntrada', label:'Incoming IP' }
+                    - { property:'portEntrada', label:'Incoming port'}
+                    - { property:'protocoloEntrada', label:'Incoming protocol', type:'choice', type_options:{ choices:{"UDP":"UDP","TLS":"TLS","TCP":"TCP","WS":"WS", "WSS":"WSS"}} }
+                    - { property:'redOrigen', label:'Origin network' }
+                    - { property:'ipSalida', label:'Outgoing IP' }
+                    - { property:'portSalida', label:'Outgoing port'}
+                    - { property:'handleRtp', label:'Handle RTP'}
+                    - { property:'incomingRtpInterface', label:'Incoming RTP interface'}
+                    - { property:'outgoingRtpInterface', label:'Outgoing RTP interface'}
+                    - { property:'rtpEngineRawOptions', label:'RTP engine raw options'}
+                    - { property:'metrica', label:'Penalty' }
+                    - { type:'group', label:'Next hop'}
+                    - { property:'nextHop', label:'Destination' }
+                    - { property:'nextHopTransport', label:'Transport', type:'choice', type_options:{ choices:{"UDP":"UDP","TLS":"TLS","TCP":"TCP","WS":"WS", "WSS":"WSS"}} }
+                    - { property:'nextHopPort', label:'Port' }

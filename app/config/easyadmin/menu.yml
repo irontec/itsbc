@@ -1,0 +1,14 @@
+easy_admin:
+    site_name: "Irontec SBC"
+    design:
+        brand_color: '#B33'
+        menu:
+            - { label: 'Routing'}
+            - { entity:'RoutingRegisters', icon:'users'}
+            - { entity:'RoutingRequests', icon:'random'}
+            - { label: 'Configuration'}
+            - { entity:'SipListeners', icon:'phone'}
+            - { entity:'MediaIps', icon:'tasks'}
+            - { label: 'Apply Changes', route:'applychanges'}
+            - { label: 'Access'}
+            - { entity:'User', icon:'user'}

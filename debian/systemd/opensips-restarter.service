@@ -1,0 +1,10 @@
+[Unit]
+Description=opensips restarter
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart opensips
+
+[Install]
+WantedBy=multi-user.target

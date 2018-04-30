@@ -1,0 +1,5 @@
+{% set interfaces_tag = '' %}
+{% for mediaIp in mediaIps %}
+{% set interfaces_tag =  interfaces_tag ~ ' ' ~ '--interface='~mediaIp.nombre~'/'~mediaIp.ip~'!'~mediaIp.advertisedIp %}
+{% endfor %}
+INTERFACES="{{interfaces_tag}}"

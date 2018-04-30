@@ -1,0 +1,12 @@
+web                 /opt/irontec/itsbc/
+bin                 /opt/irontec/itsbc/
+var                 /opt/irontec/itsbc/
+vendor              /opt/irontec/itsbc/
+src                 /opt/irontec/itsbc/
+app                 /opt/irontec/itsbc/
+schema              /opt/irontec/itsbc/
+config              /opt/irontec/itsbc/
+composer.json       /opt/irontec/itsbc/
+composer.lock       /opt/irontec/itsbc/
+config/apache2/*    /etc/apache2/sites-available/
+debian/systemd/*    /lib/systemd/system/

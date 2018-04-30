@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+        MediaIps:
+            class: AppBundle\Entity\MediaIps
+            label: 'Media IPs'
+            list:
+                title: 'Media IPs'
+                sort: ['nombre', 'ASC']
+                
+                actions:
+                    - { name: 'edit', icon: 'pencil', label:false }
+                    - { name: 'delete', icon: 'remove', label:false }
+                    - { name: 'new', label: "Add new" }
+                    - { name: '-search' }
+
+                fields:
+
+                    - { property: 'nombre', label: 'Name' }
+                    - { property: 'ip', label: 'IP' }
+                    - { property: 'advertisedIp', label: 'Advertised IP' }
+
+            form:
+                title: 'Media IPs'
+                fields:
+                    - { property:'nombre', label:'Name' }
+                    - { property:'ip', label:'IP' }
+                    - { property:'advertisedIp', label:'Advertised IP' }

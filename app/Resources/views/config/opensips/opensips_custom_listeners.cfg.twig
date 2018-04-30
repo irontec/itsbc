@@ -1,0 +1,3 @@
+{% for sipListener in sipListeners %}
+listen={{sipListener.protocolo}}:{{sipListener.ip}}:{{sipListener.puerto}}  as {{sipListener.advertisedIp}}:{{sipListener.advertisedPort}}
+{% endfor %}

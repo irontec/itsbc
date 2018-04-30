@@ -1,0 +1,5 @@
+/opt/irontec/itsbc/config/rtpengine/interfaces
+/opt/irontec/itsbc/config/opensips/opensips.cfg
+/opt/irontec/itsbc/config/opensips/opensips_database.cfg
+/opt/irontec/itsbc/config/opensips/opensips_custom_listeners.cfg
+/opt/irontec/itsbc/app/config/parameters.yml

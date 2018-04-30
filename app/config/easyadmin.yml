@@ -1,0 +1,4 @@
+imports:
+    - { resource: easyadmin/entities/*.yml }
+    - { resource: easyadmin/entities/User.yml }
+    - { resource: easyadmin/menu.yml }

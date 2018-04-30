@@ -1,0 +1,27 @@
+#!/bin/bash
+# Set current environment
+export SYMFONY_ENV=prod
+
+# Enable restarter services
+systemctl enable opensips-restarter.path
+systemctl enable rtpengine-restarter.path
+
+# Enable required modules for apache
+[ ! -L /etc/apache2/mods-enabled/rewrite.load ] && /usr/sbin/a2enmod rewrite
+[ ! -L /etc/apache2/mods-enabled/ssl.load ] && /usr/sbin/a2enmod ssl
+# Enable site
+[ ! -L /etc/apache2/sites-enabled/001-itsbc-web.conf ] && /usr/sbin/a2ensite 001-itsbc-web.conf
+
+
+# Set proper var permissions
+cd /opt/irontec/itsbc/
+chown -R www-data.www-data /opt/irontec/itsbc/
+setfacl -dR -m u:www-data:rwX -m u:root:rwX var
+setfacl  -R -m u:www-data:rwX -m u:root:rwX var
+setfacl -dR -m u:www-data:rwX -m u:root:rwX config
+setfacl  -R -m u:www-data:rwX -m u:root:rwX config
+
+# Create project cache
+rm -rf var/cache/*
+
+:

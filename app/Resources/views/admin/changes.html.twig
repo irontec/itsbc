@@ -1,0 +1,61 @@
+{% extends "@EasyAdmin/default/layout.html.twig" %}
+
+{% block main %}
+<div class="col-sm-12">
+
+    <h1>Do you want apply the changes?</h1>
+    <br>
+{{
+    form(form, {
+        method: 'POST',
+        attr: { id: 'restart-form' }
+    })
+}}
+
+</div>
+
+
+<div id="modal-restart" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4> Apply configuration changes </h4>
+                <p> Is necessary restart the service for apply the changes.</p>
+                <p> Do you want restart the service?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn">
+                   Cancel 
+                </button>
+                    <button type="button" data-dismiss="modal" class="btn btn-danger" id="modal-restart-button" >
+                        <i class="fa fa-delete"></i>
+                        Restart
+                    </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+            $('#form_apply').on('click', function(e) {
+                e.preventDefault();
+                var id = $(this).parents('tr').first().data('id');
+
+                $('#modal-restart').modal({ backdrop: true, keyboard: true })
+                    .off('click', '#modal-restart-button')
+                    .on('click', '#modal-restart-button', function () {
+                        var restartForm = $('#restart-form');
+                        restartForm.trigger('submit');
+                    });
+            });
+
+</script>
+
+
+
+{% endblock %}
+

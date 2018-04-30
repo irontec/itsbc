@@ -1,0 +1,30 @@
+easy_admin:
+    entities:
+        SipListeners:
+            class: AppBundle\Entity\SipListeners
+            label: 'SIP listeners'
+            list:
+                title: 'SIP listeners'
+                sort: ['ip', 'ASC']
+                
+                actions:
+                    - { name: 'edit', icon: 'pencil', label:false }
+                    - { name: 'delete', icon: 'remove', label:false }
+                    - { name: 'new', label: "Add new" }
+                    - { name: '-search' }
+
+                fields:
+
+                    - { property: 'ip', label: 'IP' }
+                    - { property: 'puerto', label: 'Port' }
+                    - { property: 'protocolo', label: 'Protocol' }
+                    - { property: 'advertisedIp', label: 'Advertised IP' }
+                    - { property: 'advertisedPort', label: 'Advertised port' }
+
+            form:
+                fields:
+                    - { property:'ip', label:'IP' }
+                    - { property:'puerto', label:'Port' }
+                    - { property:'protocolo', label:'Protocol', type:'choice', type_options:{ choices:{"UDP":"UDP","TLS":"TLS","TCP":"TCP","WS":"WS", "WSS":"WSS"}} }
+                    - { property:'advertisedIp', label:'Advertised IP' }
+                    - { property:'advertisedPort', label:'Advertised port' }
