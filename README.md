@@ -156,7 +156,7 @@ journalctl -f
 And see what happens :)  
 SIP Interfaces: You can check configuration that has automatically built on this file:
 ```
-root@ivozprovider-base:~# cat /opt/irontec/itsbc/config/opensips/opensips_custom_listeners.cfg 
+# cat /opt/irontec/itsbc/config/opensips/opensips_custom_listeners.cfg
 listen=UDP:127.0.0.1:5060
 ```
 This is a sample, on each one case you should have the port and IP defined on the web.
@@ -166,7 +166,7 @@ So, if this is correct, you can must verify:
  
 Media IP: You can check configuration that has automatically built on this file:
 ```
-root@ivozprovider-base:~# cat /opt/irontec/itsbc/config/rtpengine/interfaces
+# cat /opt/irontec/itsbc/config/rtpengine/interfaces
 INTERFACES=" --interface=demo/127.0.0.1!127.0.0.1"
 ```
 And, finally check if OpenSIPS and RTPEngine are running:
