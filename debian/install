@@ -8,5 +8,6 @@ schema              /opt/irontec/itsbc/
 config              /opt/irontec/itsbc/
 composer.json       /opt/irontec/itsbc/
 composer.lock       /opt/irontec/itsbc/
+scripts/*           /usr/bin/
 config/apache2/*    /etc/apache2/sites-available/
 debian/systemd/*    /lib/systemd/system/

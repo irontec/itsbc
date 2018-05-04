@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/bin/journalctl -u opensips -f | /usr/bin/osipslog
+
