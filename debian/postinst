@@ -24,4 +24,7 @@ setfacl  -R -m u:www-data:rwX -m u:root:rwX config
 # Create project cache
 rm -rf var/cache/*
 
+# Add opensips user to ssl-cert group to reach snakeoil certs
+/usr/sbin/usermod -G ssl-cert -a opensips
+
 :
